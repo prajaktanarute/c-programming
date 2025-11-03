@@ -1,0 +1,66 @@
+#include<stdio.h>
+
+//////////////////////////////////////////////////////////////////////
+//  Function Name :  CountRange
+//  Description :    It is used to perform write a program which accept number from user and count of  digits in between 3 and 7
+//  Input :          Int,Int
+//  Output :         Int
+//  Auther :         Prajakta Rajendra Narute.
+//  Date :           26/10/2025
+//
+///////////////////////////////////////////////////////////////////////
+
+int CountRange(int iNo)
+{
+    int iDigit=0, iCount=0;
+
+    if(iNo < 0)
+    {
+        iNo = -iNo;
+    }
+
+    while(iNo != 0)
+    {
+        iDigit = iNo % 10;
+        if(iDigit > 3 && iDigit < 7)
+        {
+            iCount++;
+        }
+        iNo = iNo / 10;
+    }
+    return iCount;
+
+}// End of CountRange
+
+// Time complexity: o(N)
+
+///////////////////////////////////////////////////////////////////////
+//
+//  Entry point function for the application
+//
+///////////////////////////////////////////////////////////////////////
+
+int main()
+
+{
+    int iValue=0;
+    int iRet=0;
+
+    printf("enter number\n");
+    scanf("%d", &iValue);
+
+    iRet=CountRange(iValue);
+
+    printf("%d", iRet);
+
+    return 0;
+}// End of main
+
+///////////////////////////////////////////////////////////////////////
+//
+//  Testcases Succesfully handaled by the application
+//
+//     Input1 : 2395      Output :  1 
+//     Input1 : 1018      Output :  0
+//
+///////////////////////////////////////////////////////////////////////
